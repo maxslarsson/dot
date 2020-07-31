@@ -13,6 +13,12 @@ All scripts and executables that go in this directory will be added to a bin dir
    2. Copy the file to the `bin` directory
    3. Remove the extension (e.g. test.py become test)
 4. If the file is **not** cross-platform or requires compilation (e.g. a rust crate)
-   1. Determine what is required to compile it and then execute that (e.g. cargo build --release for a rust crate)
+   1. Determine what is required to compile it and then execute that (e.g. `cargo build --release` for a rust crate)
    2. Copy the compiled executable to the `bin` directory
 5. Whenever something is changed, rebuild the executable(s)
+
+## List of Executables
+
+| Name   | Purpose                                                     | Language | Build Command           |
+| ------ | ----------------------------------------------------------- | -------- | ----------------------- |
+| mdBook | A utility to create modern online books from Markdown files | Rust     | `cargo build --release` |
