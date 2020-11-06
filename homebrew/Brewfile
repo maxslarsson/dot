@@ -1,0 +1,73 @@
+# Allows using homebrew to install applications from the Mac App Store (MAS)
+brew "mas"
+
+# Install all shells
+brew "bash"
+brew "zsh"
+brew "fish"
+
+# Install tmux
+brew "tmux"
+# Install the theme
+brew "starship"
+# Install neovim - don't install vim because neovim is going to be aliased to vim
+# Keep vim as default macvim in case something breaks in neovim
+brew "neovim"
+
+# Essential command line utilities - most are REPLACEMENTS
+# Most of these will be aliased to a different, slower, standard command
+brew "bat"
+brew "fd"
+brew "exa"
+brew "ripgrep"
+brew "fzf"
+brew "zoxide"
+
+# Utilities for development/coding/CTFs
+brew "xz"
+brew "zstd"
+brew "openssl"
+brew "htop"
+brew "nmap"
+brew "exiftool"
+brew "wget"
+brew "yarn"
+brew "llvm"
+brew "imagemagick"
+brew "speedtest-cli"
+brew "tealdeer"
+brew "jq"
+brew "gh"
+brew "asciinema"
+brew "lolcat"
+brew "cowsay"
+brew "fortune"
+brew "cmatrix"
+
+tap "clementtsang/bottom"
+brew "bottom"
+
+# ---------------------------------------------------
+# Install in case a script uses ag or ack
+# I use ripgrep instead as it is faster
+brew "the_silver_searcher"
+brew "ack"
+# ---------------------------------------------------
+
+# Install python3 and pypy3
+brew "python"
+brew "pypy3"
+
+# Install rust lsp
+brew "rust-analyzer"
+
+# Install applications
+cask "key-codes"
+cask "alacritty"
+
+mas "Xcode", id: 497799835
+
+# Install the coding nerd font
+tap "homebrew/cask-fonts"
+cask "font-jetbrains-mono-nerd-font"
+

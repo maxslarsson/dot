@@ -111,3 +111,4 @@ alias cat='bat'
 alias ls='lsd'
 alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 
+alias speed="speedtest-cli"

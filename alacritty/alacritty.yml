@@ -168,10 +168,10 @@ font:
 colors:
   # Default colors
   primary:
-    # hard contrast: background = '#1d2021'
-    background: '#282828'
-    # soft contrast: background = '#32302f'
-    foreground: '#ebdbb2'
+    #background: '#1d2021' # hard contrast 
+    background: '#282828' # normal contrast
+    #background: '#32302f' # soft contrast
+    foreground: '#ebdbb2' 
 
   # Normal colors
   normal:
@@ -510,32 +510,53 @@ mouse_bindings:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
+
+
+# ------------------
+# NOTES ON MODIFIERS
+# ------------------
+# On Mac:
+#   Super = Command
+#   Alt = Option
 key_bindings:
+  # Copy and Paste
   - { key: Paste, action: Paste }
   - { key: Copy, action: Copy }
+
+  # Command + , opens alacritty settings 
+  # The goal is to spawn a new window with a vim buffer into the alacritty.yml
+  #- { key: Comma, mods: Command, command: { program: "/Library/Application Support/Adobe/Adobe PCD/cache/Alacritty.app/Contents/MacOS/alacritty", args: None } }
+
+  # Alt + Space will work as a normal space character
+  # Don't really know why - it's a recommended default keybind
+  - { key: Space, mods: Alt, chars: " " }
+
+  # Delete the entire line
+  # Super = Command
+  - { key: Back, mods: Super, chars: "\x15" }
+
+  # This is an attempt to only partially delete the current line
+  # Trying to send ANSI escape code - CSI n K - \x1b[1K
+  # https://en.wikipedia.org/wiki/ANSI_escape_code
+  #- { key: Back, mods: Super, chars: "\x1b\x5b1K" }
 
   # Beginning and end of line with Command-Left and Command-Right
   - { key: Left, mods: Command, chars: "\x01" }
   - { key: Right, mods: Command, chars: "\x05" }
   
   # Beginning and end of word with Control-Left and Control-Right
-  - { key: Left, mods: Option, chars: "\x1bb" }
-  - { key: Right, mods: Option, chars: "\x1bf" }
-
-  # Delete line with Command-Delete
-  - { key: Back, mods: Command, chars: "\x15" }
+  # Alt = Option
+  - { key: Left, mods: Alt, chars: "\x1bb" }
+  - { key: Right, mods: Alt, chars: "\x1bf" }
 
   # Delete word with Option-Delete
-  - { key: Back, mods: Option, chars: "\x1b\x7f" }
+  # This is set by default so no need to set it
+  #- { key: Back, mods: Option, chars: "\x1b\x7f" }
  
   # Modify the font size
   - { key: Key0, mods: Command, action: ResetFontSize }
   - { key: Equals, mods: Command, action: IncreaseFontSize }
   - { key: Minus, mods: Command, action: DecreaseFontSize }
-
-  # Clearing the terminal
-  - { key: K, mods: Command, action: ClearHistory }
-  - { key: K, mods: Command, chars: "\x0c" }
 
   # Copying and pasting
   - { key: V, mods: Command, action: Paste }
@@ -547,7 +568,7 @@ key_bindings:
   - { key: Q, mods: Command, action: Quit }
   - { key: W, mods: Command, action: Quit }
   - { key: N, mods: Command, action: SpawnNewInstance }
-  - { key: F, mods: Command|Control, action: ToggleFullscreen }
+  - { key: F, mods: Command|Control, action: ToggleSimpleFullscreen }
 
   # Searching in the terminal output
   - { key: F, mods: Command, action: SearchForward }
