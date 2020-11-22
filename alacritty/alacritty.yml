@@ -285,10 +285,12 @@ live_config_reload: true
 #   - (macOS) /bin/bash --login
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
-#shell:
-#  program: /bin/bash
-#  args:
-#    - --login
+shell:
+  program: /bin/bash
+  args:
+    - -l
+    - -c
+    - "tmux attach > /dev/null 2>&1 || tmux"
 
 # Startup directory
 #
@@ -569,6 +571,7 @@ key_bindings:
   - { key: W, mods: Command, action: Quit }
   - { key: N, mods: Command, action: SpawnNewInstance }
   - { key: F, mods: Command|Control, action: ToggleSimpleFullscreen }
+  - { key: N, mods: Command|Shift, action: SpawnNewInstance }
 
   # Searching in the terminal output
   - { key: F, mods: Command, action: SearchForward }
@@ -670,12 +673,12 @@ key_bindings:
   #- { key: F,      mods: Command,            action: SearchForward    }
   #- { key: B,      mods: Command,            action: SearchBackward   }
 
-#debug:
+debug:
   # Display the time it takes to redraw each frame.
   #render_timer: false
 
   # Keep the log file after quitting Alacritty.
-  #persistent_logging: false
+  #persistent_logging: true 
 
   # Log level
   #
@@ -686,7 +689,7 @@ key_bindings:
   #   - Info
   #   - Debug
   #   - Trace
-  #log_level: Warn
+  log_level: Trace
 
   # Print all received window events.
   #print_events: false
