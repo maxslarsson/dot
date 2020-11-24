@@ -60,6 +60,7 @@ brew "rust-analyzer"
 
 # Install applications
 cask "key-codes"
+cask "hex-fiend"
 cask "alacritty"
 
 mas "Xcode", id: 497799835
