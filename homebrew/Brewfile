@@ -62,6 +62,7 @@ brew "rust-analyzer"
 cask "key-codes"
 cask "hex-fiend"
 cask "alacritty"
+cask "visual-studio-code"
 
 mas "Xcode", id: 497799835
 
