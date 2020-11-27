@@ -145,15 +145,15 @@ font:
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
   offset:
-    x: 1
-    y: 1
+    x: 0
+    y: 0
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the right,
   # increasing `y` moves the glyph upward.
   glyph_offset:
-    x: 1
-    y: 1
+    x: 0
+    y: 0
 
   # Thin stroke font rendering (macOS only)
   #
@@ -290,7 +290,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux attach > /dev/null 2>&1 || tmux"
+    - "PATH=$PATH:~/.homebrew/bin tmux -2 attach > /dev/null 2>&1 || PATH=$PATH:~/.homebrew/bin tmux -2"
 
 # Startup directory
 #
@@ -521,6 +521,20 @@ mouse_bindings:
 #   Super = Command
 #   Alt = Option
 key_bindings:
+  # Command + Shift + D sends Ctrl + Space and then "
+  # This splits vertically 
+  - { key: D, mods: Command|Shift, chars: "\x00\x22" }
+  
+  # Command + D sends Ctrl + Space and then %
+  # This splits horizontally 
+  - { key: D, mods: Command, chars: "\x00\x25" }
+
+  # Command + T sends
+  # Creates a new tab in tmux
+  - { key: T, mods: Command, chars: "\x01\x63" }
+
+  # Command + Option + LeftArrow sends Ctrl + A and then 
+   
   # Copy and Paste
   - { key: Paste, action: Paste }
   - { key: Copy, action: Copy }

@@ -1,0 +1,17 @@
+# The node_modules folder can be huge - and unnecessary
+node_modules
+
+# Python virtual enviroment folders are huge and unnecessary as well
+venv
+
+# Mac temporary file
+.DS_Store
+
+# Rust build directory
+target
+
+# VSCode Configuration
+.vscode
+
+# Python build cache
+__pycache__
