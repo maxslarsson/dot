@@ -24,6 +24,7 @@ brew "fzf"
 brew "zoxide"
 
 # Utilities for development/coding/CTFs
+brew "pkg-config"
 brew "xz"
 brew "zstd"
 brew "openssl"
@@ -52,8 +53,7 @@ brew "ack"
 # ---------------------------------------------------
 
 # Install python3 and pypy3
-brew "python"
-brew "pypy3"
+brew "pyenv"
 
 # Install rust lsp
 brew "rust-analyzer"

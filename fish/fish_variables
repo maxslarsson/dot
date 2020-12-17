@@ -1,5 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --path PKG_CONFIG_PATH:/Users/student/\x2ehomebrew/opt/icu4c/lib/pkgconfig/
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_za:zoxide\x20add
 SETUVAR _fish_abbr_zq:zoxide\x20query
