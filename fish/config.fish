@@ -7,6 +7,7 @@ if not status --is-interactive
     exit 0
 end
 
+fish_vi_key_bindings
 
 # Initialize the prompt - installed with brew
 starship init fish | source
